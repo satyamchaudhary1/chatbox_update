@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aapka Sathi - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="user.css" />
+</head>
+<body>
+
+  <!-- Wrapper to control layout -->
+   <header>
+      <nav class="navbar">
+        <div class="logo">AstroGyann</div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#footer-about">AboutUs</a></li>
+          <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Jyotish Onboard</a></li>
+          <li><a href="kundli_create/kundli_form.html">Free Kundli</a></li>
+          <li><a href="#">Kundli Matching</a></li>
+          <li><a href="astrogyaan/templates/panchang.html">Daily Panchang</a></li>
+        </ul>
+      </nav>
+    </header>
+  <div class="main-wrapper">
+    <div class="chat-container">
+      <div class="header">   Ek Sathi, Jo Bas Sunta Hai – Aapka Sathi </div>
+
+      <div class="intro-banner">
+        <img src="second_chatbox.png" alt="Welcome" class="intro-image" />
+        <h1 class="intro-text">Welcome 👋 to Aapka 🌐 Sathi Chat 💬</h1>  
+        <!-- &nbsp; -->
+  
+        <!-- <p>❤️Kabhi-kabhi bas kisi apne se baat kar lena hi kaafi hota hai. <br>🙏🏽Yeh ek safe space hai — bina kisi judgement ke, sirf sunne ke liye.</p> -->
+      </div>
+
+      <div id="login-section">
+        <input id="userPhone" placeholder="Enter your 10-digit number" maxlength="10" />
+        <button id="joinBtn">Join Chat</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="astro-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About AstroGyaan</h3>
+          <p>AstroGyaan is a human + AI-powered platform offering palm readings, kundli services, horoscopes, and pooja bookings with local pandits — all in one place.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#">Jyotish Onboard</a></li>
+            <li><a href="/birth-chart">Birth Chart</a></li>
+            <li><a href="/blog">Astrology Blog</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:Astrogyaan@gmail.com">Astrogyaan@gmail.com</a></p>
+          <p>Phone: +1 0000000000</p>
+          <p>Address: Dummy 123</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("mobile-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+
+  </div>
+
+  <script>
+    document.getElementById('joinBtn').onclick = () => {
+      const phone = document.getElementById('userPhone').value.trim();
+      if (phone.length !== 10 || isNaN(phone)) {
+        alert('Enter a valid 10-digit number');
+        return;
+      }
+      localStorage.setItem('userPhone', phone);
+      window.location.href = 'user.html';
+    };
+  </script>
+
+</body>
+</html>
